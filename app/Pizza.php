@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Pizza extends Model
 {
     protected $appends = ['url'];
+    
+    protected $fillable = ['name', 'selling_price'];
 
     public function ingredients()
     {
