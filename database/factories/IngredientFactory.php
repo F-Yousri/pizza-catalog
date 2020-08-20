@@ -2,7 +2,7 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\Pizza;
+use App\Ingredient;
 use Faker\Generator as Faker;
 
 /*
@@ -16,9 +16,9 @@ use Faker\Generator as Faker;
 |
 */
 
-$factory->define(Pizza::class, function (Faker $faker) {
+$factory->define(Ingredient::class, function (Faker $faker) {
     return [
         'name' => $faker->name,
-        'selling_price' => $faker->randomFloat(2,0,999.99),
+        'cost_price' => $faker->randomFloat(2,0,99.99),
     ];
 });

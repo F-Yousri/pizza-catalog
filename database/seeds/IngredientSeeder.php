@@ -1,9 +1,9 @@
 <?php
 
-use App\Pizza;
+use App\Ingredient;
 use Illuminate\Database\Seeder;
 
-class PizzaSeeder extends Seeder
+class IngredientSeeder extends Seeder
 {
     /**
      * Seed the application's database.
@@ -12,6 +12,6 @@ class PizzaSeeder extends Seeder
      */
     public function run()
     {
-        factory(Pizza::class, 10)->create();
+        factory(Ingredient::class, 50)->create();
     }
 }
