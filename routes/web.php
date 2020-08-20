@@ -19,4 +19,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'PizzaController@index')->name('home');
+
+Route::resource('pizzas', 'PizzaController');
+Route::resource('ingredients', 'IngredientController')->only(['create', 'store']);

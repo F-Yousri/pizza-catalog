@@ -2,11 +2,11 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">Example Component</div>
+                <div class="card" @click="visit(pizza.url)">
+                    <div class="card-header">{{pizza.name}}</div>
 
                     <div class="card-body">
-                        I'm a Example component.
+                        {{pizza.selling_price}}
                     </div>
                 </div>
             </div>
@@ -16,6 +16,14 @@
 
 <script>
     export default {
+        props: {
+            pizza: Object
+        },
+        methods: {
+            visit: function(url) {
+                window.location.href= url
+            }
+        },
         mounted() {
             console.log('Component mounted.')
         }
