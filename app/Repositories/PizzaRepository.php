@@ -23,4 +23,9 @@ class PizzaRepository
         $pizza->ingredients()->sync($ingredients);
         return $pizza;
     }
+
+    public function getOne(int $id)
+    {
+        Pizza::whereId($id)->with('ingredients')->get();
+    }
 }

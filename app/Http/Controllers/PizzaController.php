@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StorePizza;
 use App\Pizza;
 use App\Services\PizzaService;
 use App\ViewModels\PizzaViewModel;
@@ -36,7 +37,7 @@ class PizzaController extends Controller
      */
     public function create()
     {
-        //
+        return view('pizza.create');
     }
 
     /**
@@ -45,9 +46,12 @@ class PizzaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StorePizza $request)
     {
-        //
+        $this->pizzaService->createOne($request->validated());
+
+        return redirect(route('home'));
+
     }
 
     /**
@@ -58,7 +62,7 @@ class PizzaController extends Controller
      */
     public function show(Pizza $pizza)
     {
-        return (new PizzaViewModel($pizza))->view('pizza.show');
+        return (new PizzaViewModel($pizza->load(['ingredients'])))->view('pizza.show');
     }
 
     /**

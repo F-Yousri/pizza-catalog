@@ -6,7 +6,7 @@
                     <div class="card-header">Pizza Component</div>
 
                     <div v-for="pizza in pizzas" class="card-body">
-                        <pizza-component :pizza=pizza></pizza-component>
+                        <pizza-card-component :pizza=pizza></pizza-card-component>
                     </div>
                 </div>
             </div>

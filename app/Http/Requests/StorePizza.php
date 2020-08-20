@@ -25,7 +25,7 @@ class StorePizza extends FormRequest
     {
         return [
             'name' => ['required', 'string', 'min:2', 'max:50'],
-            'price' => ['required', 'float', 'min:0.01', 'max:999.99'],
+            'selling_price' => ['required', 'numeric', 'min:0.01', 'max:999.99'],
         ];
     }
 }

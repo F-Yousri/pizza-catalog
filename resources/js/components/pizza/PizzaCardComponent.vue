@@ -1,11 +1,16 @@
 <template>
     <div class="container">
         <div class="row justify-content-center">
-            <div v-for="ingredient in pizza.ingredients" class="card-body">
-                <ingredient-card-component :ingredient=ingredient></ingredient-card-component>
+            <div class="col-md-8">
+                <div class="card" @click="visit(pizza.url)">
+                    <div class="card-header">{{pizza.name}}</div>
+
+                    <div class="card-body">
+                        {{pizza.selling_price}}
+                    </div>
+                </div>
             </div>
         </div>
-        
     </div>
 </template>
 

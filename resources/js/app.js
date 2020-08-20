@@ -22,6 +22,8 @@ window.Vue = require('vue');
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('pizza-component', require('./components/pizza/PizzaComponent.vue').default);
 Vue.component('pizzas-component', require('./components/pizza/PizzasComponent.vue').default);
+Vue.component('pizza-card-component', require('./components/pizza/PizzaCardComponent.vue').default);
+Vue.component('ingredient-card-component', require('./components/ingredient/IngredientCardComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

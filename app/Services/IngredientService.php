@@ -6,7 +6,7 @@ use App\Exceptions\InvalidDataException;
 use App\Repositories\IngredientRepository;
 use Exception;
 
-class PizzaService
+class IngredientService
 {
     /** @var IngredientRepository */
     protected $ingredientRepository;
