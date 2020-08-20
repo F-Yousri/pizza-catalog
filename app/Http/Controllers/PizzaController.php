@@ -3,10 +3,20 @@
 namespace App\Http\Controllers;
 
 use App\Pizza;
+use App\Services\PizzaService;
+use App\ViewModels\PizzaViewModel;
 use Illuminate\Http\Request;
 
 class PizzaController extends Controller
 {
+    /** @var PizzaService */
+    protected $pizzaService;
+
+    public function __construct(PizzaService $pizzaService)
+    {
+        $this->pizzaService = $pizzaService;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +24,9 @@ class PizzaController extends Controller
      */
     public function index()
     {
-        //
+        $pizzas = $this->pizzaService->getAll();
+
+        return view('pizza.index', ['pizzas' => $pizzas]);
     }
 
     /**
@@ -46,7 +58,7 @@ class PizzaController extends Controller
      */
     public function show(Pizza $pizza)
     {
-        //
+        return (new PizzaViewModel($pizza))->view('pizza.show');
     }
 
     /**

@@ -3,10 +3,10 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">Example Component</div>
+                    <div class="card-header">{{pizza.name}}</div>
 
                     <div class="card-body">
-                        I'm a Example component.
+                        {{pizza.id}}
                     </div>
                 </div>
             </div>
@@ -16,6 +16,9 @@
 
 <script>
     export default {
+        props: {
+            pizza: Object
+        },
         mounted() {
             console.log('Component mounted.')
         }
